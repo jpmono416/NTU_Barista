@@ -13,4 +13,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="place_order">Place Order</string>
+    <string name="past_orders">Past Orders</string>
+    <string name="barista">Barista</string>
+    <string name="settings">Settings</string>
 </resources>
