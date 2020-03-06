@@ -41,6 +41,37 @@
                 android:layout_height="wrap_content"
                 android:text="@string/view_all_orders"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <ImageView
+                android:id="@+id/imgStoreMode"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/store_mode"
+                app:srcCompat="@drawable/tick" />
+
+            <TextView
+                android:id="@+id/txtStoreMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/store_mode"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <ImageView
+                android:id="@+id/imgSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/update_menu"
+                app:srcCompat="@drawable/settings" />
+
+            <TextView
+                android:id="@+id/txtUpdateMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update_menu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
         </LinearLayout>
     </ScrollView>
 
