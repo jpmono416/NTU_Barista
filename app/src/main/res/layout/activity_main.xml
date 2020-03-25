@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:onClick="redirToPlaceOrder"
                 android:text="@string/place_order"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -51,6 +48,7 @@
                 android:layout_height="235dp"
                 android:layout_marginTop="30dp"
                 android:contentDescription="@string/past_orders"
+                android:onClick="redirToPastOrders"
                 app:srcCompat="@drawable/orders" />
 
             <TextView
@@ -58,26 +56,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:onClick="redirToPastOrders"
                 android:text="@string/past_orders"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-            <ImageView
-                android:id="@+id/imgSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:contentDescription="@string/settings"
-                app:srcCompat="@drawable/settings" />
-
-            <TextView
-                android:id="@+id/txtSettings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                android:text="@string/settings"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         </LinearLayout>
     </ScrollView>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

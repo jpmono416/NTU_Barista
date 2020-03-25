@@ -33,12 +33,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/view_all_orders"
+                android:onClick="redirToAllOrders"
                 app:srcCompat="@drawable/orders" />
 
             <TextView
                 android:id="@+id/txtViewOrders"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="redirToAllOrders"
                 android:text="@string/view_all_orders"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -48,12 +50,14 @@
                 android:layout_height="300dp"
                 android:layout_marginTop="30dp"
                 android:contentDescription="@string/store_mode"
+                android:onClick="redirToStoreMode"
                 app:srcCompat="@drawable/tick" />
 
             <TextView
                 android:id="@+id/txtStoreMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="redirToStoreMode"
                 android:text="@string/store_mode"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -63,12 +67,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:contentDescription="@string/update_menu"
+                android:onClick="redirToUpdateMenu"
                 app:srcCompat="@drawable/settings" />
 
             <TextView
                 android:id="@+id/txtUpdateMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="redirToUpdateMenu"
                 android:text="@string/update_menu"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
