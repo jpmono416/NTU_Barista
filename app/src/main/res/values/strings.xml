@@ -18,6 +18,7 @@
     <string name="barista">Barista</string>
     <string name="barista_staff">Barista - Staff</string>
     <string name="view_all_orders">View all orders</string>
+    <string name="all_orders">All orders</string>
     <string name="store_mode">Store mode</string>
     <string name="imgntu">imgNTU</string>
     <string name="log_in">Log in</string>
@@ -32,4 +33,14 @@
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="zero">0</string>
+    <string name="uid">uID</string>
+    <string name="date">Date</string>
+    <string name="product_names">Product names</string>
+    <string name="basket">Basket</string>
+    <string name="tap_once">Tap once to mark as ready</string>
+    <string name="tap_again">Tap again to mark as collected</string>
+    <string name="status">Status</string>
+    <string name="being_prepared">Being prepared</string>
+    <string name="ready_to_collect">Ready for collection</string>
+    <string name="collected">Collected</string>
 </resources>

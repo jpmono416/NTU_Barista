@@ -12,14 +12,13 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
 import java.util.Map;
 import java.util.Objects;
 
 
-abstract class ProductControl extends AppCompatActivity {
+abstract class OrderControl extends AppCompatActivity {
 
-    protected ArrayList<Map<String, Object>> products = new ArrayList<>();
+    protected ArrayList<Map<String, Object>> orders = new ArrayList<>();
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -30,16 +29,16 @@ abstract class ProductControl extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        db.collection("products").get()
+        db.collection("orders").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            products.clear();
+                            orders.clear();
                             for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                                products.add(document.getData());
+                                orders.add(document.getData());
                             }
-                            onProductsFetched(products);
+                            onProductsFetched(orders);
                         }
                     }
                 });

@@ -4,4 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderTracker"/>
+    tools:context=".OrderTracker">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="288dp"
+        android:layout_height="411dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgCheck"
+        android:layout_width="448dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/collected"
+        android:onClick="onCheckPressed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tick" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/status"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/txtTapOnce" />
+
+    <TextView
+        android:id="@+id/txtCurrentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/status"
+        app:layout_constraintStart_toEndOf="@+id/txtStatus"
+        app:layout_constraintTop_toBottomOf="@+id/txtTapOnce" />
+
+    <TextView
+        android:id="@+id/txtTapOnce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/tap_once"
+        app:layout_constraintStart_toEndOf="@+id/recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/imgCheck" />
+
+    <TextView
+        android:id="@+id/txtTapAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tap_again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

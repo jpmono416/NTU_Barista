@@ -8,10 +8,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,8 +18,15 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
 
     private Context mcontext;
     private ArrayList<Map<String, Object>> items;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private OnItemClickListener mListener;
+    private Boolean staffMode = false;
+    public void setStaffModeOn(){
+        this.staffMode = true;
+    }
+    public void setStaffModeOff(){
+        this.staffMode = false;
+    }
+
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -41,9 +46,17 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_products_item, parent, false);
+        View view = getLayout(parent);
         ViewHolder holder = new ViewHolder(view, mListener);
         return holder;
+    }
+
+    private View getLayout(ViewGroup parent)
+    {
+        if(staffMode) {
+            return LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_update_item, parent, false);
+        }
+        return LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_products_item, parent, false);
     }
 
     @Override
@@ -59,19 +72,27 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
         return items.size();
     }
 
+    void setItems(ArrayList<Map<String, Object>> items) {
+        this.items = items;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder
     {
         TextView txtName;
         TextView txtDescription;
         TextView txtPrice;
+        ImageView imgBasket;
         ConstraintLayout parentLayout;
+
+
 
         public ViewHolder(@NonNull View productView, final OnItemClickListener listener)
         {
             super(productView);
-            txtName = productView.findViewById(R.id.txtName);
-            txtDescription = productView.findViewById(R.id.txtDescription);
+            txtName = productView.findViewById(R.id.txtDate);
+            txtDescription = productView.findViewById(R.id.txtProductNames);
             txtPrice = productView.findViewById(R.id.txtPrice);
+            imgBasket = productView.findViewById(R.id.basket);
             parentLayout = productView.findViewById(R.id.rv_layout);
 
             productView.setOnClickListener(new View.OnClickListener() {

@@ -18,7 +18,7 @@ public class StaffMain extends AppCompatActivity {
     // Navigation
     public void redirToAllOrders(View v)
     {
-        Intent allOrdersIntent = new Intent(StaffMain.this, PlaceOrder.class);
+        Intent allOrdersIntent = new Intent(StaffMain.this, AllOrders.class);
         StaffMain.this.startActivity(allOrdersIntent);
     }
 

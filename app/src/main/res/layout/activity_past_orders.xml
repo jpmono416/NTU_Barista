@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".PastOrders">
 
+    <TextView
+        android:id="@+id/txtAllOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/past_orders"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#e8005a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAllOrders" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
